@@ -1,25 +1,39 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+let votingAge = 20;
 
+if (votingAge >18){
+  console.log(true);
+}
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
+let i = 5;
+i++;
 
+if (i <= 10){
+  console.log(i);
+}
 
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
+let x = "1999";
+console.log(Number (x));
 
 
 
 //Task d: Write a function to multiply a*b 
 
-
+function multiply(num1, num2){
+    return num1 * num2;
+  }
+  
+  console.log(multiply(10,10));
 
 
 
@@ -27,13 +41,49 @@
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
+function dogYears (myAge){
+    return (myAge * 7);
+  }
+  
+  console.log(dogYears(39));
 
 
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
 //takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
+
+function dogFeeder (dogWeight, dogAge) {
+    if (dogAge >= 1 && dogWeight <= 5) {
+        return(.05 * dogWeight); 
+    } 
+    
+    else if (dogAge >= 1 && (dogWeight >= 6 && dogWeight <= 10)) {
+        return(.04 * dogWeight);
+    } 
+    
+    else if (dogAge >= 1 && (dogWeight >= 11 && dogWeight <= 15)) {
+        return(.03 * dogWeight);
+    } 
+    
+    else if (dogAge >= 1 && dogWeight > 15) {
+        return(.02 * dogWeight);
+    } 
+    
+    else if (dogAge >= .2 && dogAge < .4) {
+        return(.1 * dogWeight);
+    } 
+    
+    else if (dogAge >= .4 && dogAge < .7) {
+        return(.05 * dogWeight);
+    } 
+    
+    else if (dogAge >= .7 && dogAge < 1) {
+        return(.04 * dogWeight);
+    }
+}
+
+console.log(dogFeeder(15, 1));
 
 //feeding requirements
 // adult dogs at least 1 year 
