@@ -110,7 +110,32 @@ console.log(dogFeeder(15, 1));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+// First create a random index that will allow the computer to produce 0,1,2.
+
+function generateComputerHand(){
+    let hands = {0:"rock", 1:"paper", 2:"scissors"};
+    let randomIndex = Math.floor(Math.random() * 3); 
+    let computerHand = hands[randomIndex]; 
+    return computerHand
+}
+
+function winner(me, computerHand) {
+    if (me === computerHand) {
+        return "Tied!";
+    } else if (me === "rock" && computerHand === "scissors") {
+        return "You won!";
+    } else if (me === "paper" && computerHand === "rock") {
+        return "You won!";
+    } else if (me === "scissors" && computerHand === "paper") {
+        return "You won!";
+    } else {
+        return "You lost!"; 
+    }
+}
+   
+    let computer = generateComputerHand();
+    console.log(winner("rock", computer))
+ 
   
 
 /************************************************************** Task 5 **************************************************************/
