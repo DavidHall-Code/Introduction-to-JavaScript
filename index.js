@@ -122,13 +122,21 @@ function generateComputerHand(){
 function winner(me, computerHand) {
     if (me === computerHand) {
         return "Tied!";
-    } else if (me === "rock" && computerHand === "scissors") {
+    } 
+    
+    else if (me === "rock" && computerHand === "scissors") {
         return "You won!";
-    } else if (me === "paper" && computerHand === "rock") {
+    } 
+    
+    else if (me === "paper" && computerHand === "rock") {
         return "You won!";
-    } else if (me === "scissors" && computerHand === "paper") {
+    } 
+    
+    else if (me === "scissors" && computerHand === "paper") {
         return "You won!";
-    } else {
+    } 
+    
+    else {
         return "You lost!"; 
     }
 }
@@ -142,13 +150,23 @@ function winner(me, computerHand) {
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function kilometerToMiles(kilometers) {
+    let miles = (kilometers / 1.609);
+    return miles
+}
 
+console.log(kilometerToMiles(23))
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+function centimeterToFeet(feet) {
+    let centimeters = (feet * 30.48);
+    return centimeters
+}
 
+console.log(centimeterToFeet(13))
 
 
 
@@ -157,7 +175,24 @@ function winner(me, computerHand) {
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+function songTime(num) {
+    while(num >= 0) {
+        let newNum = num-1
+        if (num > 1) {
+            console.log(num + " bottles of soda on the wall, " + num + " bottles of soda, take one down, pass it around, " + newNum + " bottles of soda on the wall.");
+        } 
+        
+        else if (num === 1) {
+            console.log(num + " bottle of soda on the wall, " + num + " bottle of soda, take one down, pass it around, no bottles of soda on the wall.");
+        } 
+        
+        else {
+            console.log("You sodas are all gone!") } 
+        num-- 
+    }   
+}
 
+songTime(4)
 
 
 
@@ -170,7 +205,29 @@ function winner(me, computerHand) {
 //60s should be D 
 //and anything below 60 should be F
   
+function gradeCalculator(grade) {
+    if (grade >= 90 && grade <= 99) {
+        return "A";
+    } 
+    
+    else if (grade >= 80 && grade <= 89) {
+        return "B";
+    } 
+    
+    else if (grade >= 70 && grade <= 79) {
+        return "C";
+    } 
+    
+    else if (grade >= 60 && grade <= 69) {
+        return "D";
+    } 
+    
+    else if (grade <=59) {
+        return "F";
+    }
+}
 
+console.log(gradeCalculator(76))
   
   
 
@@ -179,7 +236,18 @@ function winner(me, computerHand) {
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
-
+function vowelCounter(str1){
+    let vowelList = 'AEIOUaeiou';
+    let vcount = 0;  
+    for(let x = 0; x < str1.length ; x++){
+      if (vowelList.indexOf(str1[x]) !== -1){
+        vcount += 1;
+      }
+    }
+    return vcount;
+  }
+  
+  console.log(vowelCounter("Lambda School Is Awesome!"));
 
 
 
